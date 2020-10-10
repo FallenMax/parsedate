@@ -1,10 +1,10 @@
 start:
-	FLASK_ENV=development pipenv run python -m flask run --host=0.0.0.0
+	FLASK_ENV=development pipenv run python -m flask run --host=0.0.0.0 --port=5010
 
 serve:
 	# https://flask.palletsprojects.com/en/1.1.x/deploying/uwsgi/#starting-your-app-with-uwsgi
-  # https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html
-	pipenv run uwsgi --master --http :5000 -s /tmp/parsedate.sock --manage-script-name --mount /=app:app --processes 2 --threads 2
+	# https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html
+	pipenv run uwsgi --master --http :6010 -s /tmp/parsedate.sock --manage-script-name --mount /=app:app --processes 2 --threads 2
 
 install:
 	pipenv install
