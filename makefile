@@ -17,6 +17,6 @@ install-all:
 	# https://stackoverflow.com/questions/21669354/rebuild-uwsgi-with-pcre-support
 	sudo apt-get install build-essential python-dev python3-dev
 	sudo apt-get install libpcre3 libpcre3-dev
-	pip install -uwsgi -I --no-cache-dir
+	pip install uwsgi -I --no-cache-dir
 	pipenv install
 
