@@ -23,7 +23,7 @@ def get_payload():
     json = request.get_json()
     if json is None:
         return args
-    if len(args) is 0:
+    if len(args) == 0:
         return json
     payload = {
         **args,
