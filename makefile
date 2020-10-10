@@ -6,6 +6,10 @@ serve:
 	# https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html
 	pipenv run uwsgi --master --http :6010 -s /tmp/parsedate.sock --manage-script-name --mount /=app:app --processes 2 --threads 2
 
+	# to run after exit terminal:
+	# nohup make serve > /dev/null &
+	# disown %1
+
 install:
 	pipenv install
 
