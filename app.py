@@ -39,6 +39,12 @@ def parse_date(text):
     return date.isoformat()
 
 
+@app.after_request
+def add_cors(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    return response
+
+
 @app.route(routes['/'])
 def index():
     return ok({'api': routes})
